@@ -8,3 +8,11 @@ kubectl get deployment/pods
 kubectl expose service --type=NodePort --port=80 --target-port=80 --name=mynginx
 kubectl get service mynginx
 kubectl port-forward service/mynginx 8088:80
+
+
+
+minikube start
+kubectl create deployment mynginx --image=nginx
+kubectl set image deployment/myngnix nginx=nginx:latest
+kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
+kubectl port-forward svc/mynginx 8081:80
