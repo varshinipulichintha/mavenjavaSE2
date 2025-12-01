@@ -1,0 +1,46 @@
+docker pull nginx
+docker run -d --name mynewcon -p 8081:80 nginx
+
+mkdir myapp
+cd myapp
+
+docker compose up
+docker compose up -d
+docker compose up --build
+docker compose up --build -d
+
+docker compose ps
+docker compose logs
+docker compose logs -f
+docker compose logs --tail=50 -f
+
+docker compose exec <service> bash
+docker compose exec <service> sh
+docker compose run --rm <service> bash
+
+docker compose stop
+docker compose start
+docker compose restart
+
+docker compose down
+docker compose down --volumes
+docker compose down --rmi all
+
+docker compose pull
+docker compose build
+docker compose images
+docker compose top
+
+docker compose rm -f
+docker compose config
+
+docker compose up -d --force-recreate
+docker compose up -d --scale <service>=3
+
+docker volume ls
+docker volume rm <volume>
+
+docker inspect <container>
+
+docker compose -f <file>.yml up -d
+docker compose --env-file .env up -d
